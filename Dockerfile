@@ -1,14 +1,10 @@
-FROM python:3.6
+FROM python:3.6.2
 
-USER root
+RUN mkdir -p /home/project/dash_app
+WORKDIR /home/project/dash_app
+ADD ./requirements.txt /home/project/dash_app/requirements.txt
+ADD ./app.py /home/project/dash_app/app.py
 
-WORKDIR /app
-
-ADD ./requirements.txt /app/requirements.txt
-ADD ./app.py /app/app.py
-
-RUN pip install --trusted-host pypi.python.org -r /app/requirements.txt
+RUN pip install --no-cache-dir -r /home/project/dash_app/requirements.txt
 
 EXPOSE 8050
-
-USER 1001
