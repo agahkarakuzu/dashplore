@@ -4,10 +4,10 @@ USER root
 
 WORKDIR /app
 
-ADD . /app/requirements.txt
-ADD . /app/app.py
+ADD ./requirements.txt /app/requirements.txt
+ADD ./app.py /app/app.py
 
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install --trusted-host pypi.python.org -r /app/requirements.txt
 
 EXPOSE 8050
 
