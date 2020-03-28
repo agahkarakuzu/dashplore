@@ -8,7 +8,11 @@ resources:
   - repository: subrepos
     endpoint: agahkarakuzu
     type: github
-    name: agahkarakuzu/rrsg2019*
+    name: agahkarakuzu/rrsg2019.om
+  - repository: subrepos
+    endpoint: agahkarakuzu
+    type: github
+    name: agahkarakuzu/rrsg2019.py
  
 trigger:
 - master
