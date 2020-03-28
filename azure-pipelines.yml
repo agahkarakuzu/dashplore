@@ -5,7 +5,8 @@
 
 resources:
   repositories:
-  - repository: subrepos 
+  - repository: subrepos
+    endpoint: agahkarakuzu
     type: github
     name: agahkarakuzu/rrsg2019*
  
