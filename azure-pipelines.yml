@@ -5,11 +5,11 @@
 
 resources:
   repositories:
-  - repository: subrepos
+  - repository: subrepos1
     endpoint: agahkarakuzu
     type: github
     name: agahkarakuzu/rrsg2019.om
-  - repository: subrepos
+  - repository: subrepos2
     endpoint: agahkarakuzu
     type: github
     name: agahkarakuzu/rrsg2019.py
@@ -21,10 +21,8 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- checkout: self
+- checkout: subrepos1
+- checkout: subrepos2
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- script: dir $(Build.SourcesDirectory)
